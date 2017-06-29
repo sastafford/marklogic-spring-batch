@@ -12,7 +12,7 @@ dependencies:
     # Docker commands
     - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
     - docker info
-    - docker pull $DOCKER_MARKLOGIC_IMAGE
+    - docker pull sastafford/marklogic:8
 
 test:
   override:
