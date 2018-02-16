@@ -7,14 +7,19 @@ import com.marklogic.client.io.marker.DocumentPatchHandle;
 import com.marklogic.client.util.EditableNamespaceContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.batch.item.ExecutionContext;
+import org.springframework.batch.item.ItemStreamException;
+import org.springframework.batch.item.ItemStreamWriter;
 import org.springframework.batch.item.ItemWriter;
 
 import java.util.List;
 
-public class MarkLogicPatchItemWriter implements ItemWriter<String[]> {
+public class MarkLogicPatchItemWriter implements ItemStreamWriter<String[]> {
     protected final Logger logger = LoggerFactory.getLogger(getClass());
 
     private DatabaseClient databaseClient;
+    private String contextPath;
+    private Object fragment;
     
     public MarkLogicPatchItemWriter(DatabaseClient client) {
         this.databaseClient = client;
@@ -38,5 +43,20 @@ public class MarkLogicPatchItemWriter implements ItemWriter<String[]> {
             docMgr.patch(uri, patchHandle);
         }
         
+    }
+
+    @Override
+    public void open(ExecutionContext executionContext) throws ItemStreamException {
+
+    }
+
+    @Override
+    public void update(ExecutionContext executionContext) throws ItemStreamException {
+
+    }
+
+    @Override
+    public void close() throws ItemStreamException {
+
     }
 }
