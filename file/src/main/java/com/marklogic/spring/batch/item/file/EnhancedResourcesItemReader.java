@@ -79,11 +79,11 @@ public class EnhancedResourcesItemReader extends ResourcesItemReader {
         String pattern = inputFilePath;
 
         if (new File(inputFilePath).isDirectory()) {
-            if (pattern.endsWith("/")) {
+            if (pattern.endsWith(File.separator)) {
                 pattern += "**";
             }
             else {
-                pattern += "/**";
+                pattern += File.separator + "**";
             }
         }
 

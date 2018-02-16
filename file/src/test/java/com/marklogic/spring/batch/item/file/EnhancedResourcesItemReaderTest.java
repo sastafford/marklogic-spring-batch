@@ -37,8 +37,8 @@ public class EnhancedResourcesItemReaderTest extends Assert {
 
     @Test
     public void fileDirectory() {
-        assertEquals("file:src/**", test("src"));
-        assertEquals("file:src" + File.separator + "/**", test("src" + File.separator));
+        assertEquals("file:src" + File.separator + "**", test("src"));
+        assertEquals("file:src" + File.separator + "**", test("src" + File.separator));
     }
 
     @Test
